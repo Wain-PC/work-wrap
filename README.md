@@ -1,4 +1,4 @@
-# task.js
+# work-wrap
 This tiny library makes your heavy JS code run in a separate thread in the browser.
 
 ## install
@@ -6,10 +6,9 @@ This tiny library makes your heavy JS code run in a separate thread in the brows
 ```
 npm install work-wrap
 
-OR
+or
 
 yarn add work-wrap
-
 ```
 
 ## Usage
