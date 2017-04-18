@@ -1,4 +1,4 @@
-# work-wrap
+# work-wrap [![Build Status](https://travis-ci.org/Wain-PC/work-wrap.svg?branch=master)](https://travis-ci.org/Wain-PC/work-wrap) [![Code Climate](https://img.shields.io/codeclimate/github/wain-pc/work-wrap.svg)](https://codeclimate.com/github/wain-pc/work-wrap)
 This tiny library makes your heavy JS code run in a separate thread in the browser.
 
 ## install
