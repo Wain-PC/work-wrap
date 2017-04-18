@@ -2,7 +2,7 @@
 // Generated on Wed Mar 29 2017 18:20:05 GMT+0300 (Russia TZ 2 Standard Time)
 
 module.exports = function (config) {
-	config.set({
+	var configuration = {
 		basePath: '',
 		frameworks: ['mocha', 'sinon-chai'],
 		files: [
@@ -11,8 +11,15 @@ module.exports = function (config) {
 			'test/test.js'
 		],
 		exclude: [],
-		reporters: ['progress'],
 
+		customLaunchers: {
+			Chrome_travis_ci: {
+				base: 'Chrome',
+				flags: ['--no-sandbox']
+			}
+		},
+
+		reporters: ['progress'],
 		port: 9876,
 		colors: true,
 		logLevel: config.LOG_INFO,
@@ -20,5 +27,11 @@ module.exports = function (config) {
 		browsers: ['PhantomJS', 'Chrome', 'Firefox', 'IE'],
 		singleRun: true,
 		concurrency: Infinity
-	})
+	};
+
+	if(process.env.TRAVIS) {
+		configuration.browsers = ['PhantomJS', 'Firefox', 'Chrome_travis_ci'];
+	}
+
+	config.set(configuration);
 };
